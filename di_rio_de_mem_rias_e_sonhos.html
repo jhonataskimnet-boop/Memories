@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onírica & Nostalgia — Diário de Memórias e Sonhos</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond (Editorial/Poético) & Plus Jakarta Sans (Leitura limpa) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 8s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.4s ease-out forwards',
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Transições suaves de tema entre Memórias (Âmbar/Dourado) e Sonhos (Índigo/Violeta) */
+        body {
+            transition: background-color 0.8s cubic-bezier(0.22, 1, 0.36, 1), color 0.5s ease;
+        }
+
+        /* Tema Padrão / Misto (Crepúsculo Cósmico) */
+        body.theme-all {
+            background-color: #0d0c13;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(217, 119, 6, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(99, 102, 241, 0.10) 0%, transparent 45%);
+        }
+
+        /* Tema Memórias (Nostalgia Quente, Âmbar e Dourado) */
+        body.theme-memory {
+            background-color: #140f0a;
+            background-image: 
+                radial-gradient(circle at 20% 10%, rgba(245, 158, 11, 0.14) 0%, transparent 50%),
+                radial-gradient(circle at 80% 90%, rgba(180, 83, 9, 0.10) 0%, transparent 50%);
+        }
+
+        /* Tema Sonhos (Etéreo, Índigo Noturno e Violeta) */
+        body.theme-dream {
+            background-color: #080914;
+            background-image: 
+                radial-gradient(circle at 80% 15%, rgba(129, 140, 248, 0.14) 0%, transparent 50%),
+                radial-gradient(circle at 20% 85%, rgba(139, 92, 246, 0.12) 0%, transparent 50%);
+        }
+
+        /* Barra de rolagem elegante */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Utilitário para truncar linhas com elegância */
+        .line-clamp-4 {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Efeito de vidro fosco refinado */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="theme-all text-stone-200 font-sans min-h-screen flex flex-col antialiased selection:bg-amber-500/30 selection:text-amber-200">
+
+    <!-- Orbes Decorativos de Fundo -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div id="orb-1" class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-amber-500/10 blur-3xl transition-all duration-1000 animate-pulse-slow"></div>
+        <div id="orb-2" class="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-indigo-500/10 blur-3xl transition-all duration-1000 animate-pulse-slow"></div>
+    </div>
+
+    <!-- Cabeçalho Principal -->
+    <header class="relative z-10 border-b border-white/10 bg-black/20 backdrop-blur-md sticky top-0">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3 text-center sm:text-left">
+                <div id="logo-icon-box" class="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-500/20 to-indigo-500/20 border border-white/15 flex items-center justify-center shadow-lg transition-all duration-500">
+                    <i data-lucide="sparkles" class="w-5 h-5 text-amber-300"></i>
+                </div>
+                <div>
+                    <h1 class="font-serif text-2xl sm:text-3xl font-bold tracking-wide text-white leading-none">
+                        Onírica & Nostalgia
+                    </h1>
+                    <p class="text-xs text-stone-400 tracking-widest uppercase mt-1">
+                        Diário de Memórias e Sonhos
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-end">
+                <!-- Status de Sincronização na Nuvem -->
+                <div id="sync-status" class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-stone-400" title="Seus registros são salvos automaticamente na nuvem">
+                    <span id="sync-dot" class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    <span id="sync-text">Conectando...</span>
+                </div>
+
+                <!-- Botão Novo Registro -->
+                <button onclick="openFormModal()" id="btn-new-entry" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-semibold text-sm shadow-lg shadow-amber-500/20 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
+                    <i data-lucide="feather" class="w-4 h-4"></i>
+                    <span>Novo Registro</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="relative z-10 flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Navegação Principal entre Abas (Atmosferas) -->
+        <section class="flex flex-col items-center mb-8">
+            <div class="inline-flex p-1.5 rounded-2xl glass-panel shadow-xl gap-1 sm:gap-2 flex-wrap justify-center">
+                <button onclick="setTab('all')" id="tab-all" class="tab-btn flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 bg-white/15 text-white shadow-sm cursor-pointer">
+                    <i data-lucide="compass" class="w-4 h-4 text-stone-300"></i>
+                    <span>Todos</span>
+                    <span id="count-all" class="ml-1 text-xs px-2 py-0.5 rounded-full bg-white/10 text-stone-300">0</span>
+                </button>
+
+                <button onclick="setTab('memory')" id="tab-memory" class="tab-btn flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-xl text-sm font-medium text-stone-400 hover:text-amber-200 transition-all duration-300 cursor-pointer">
+                    <i data-lucide="sun" class="w-4 h-4 text-amber-400"></i>
+                    <span>Memórias</span>
+                    <span id="count-memory" class="ml-1 text-xs px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-300">0</span>
+                </button>
+
+                <button onclick="setTab('dream')" id="tab-dream" class="tab-btn flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-xl text-sm font-medium text-stone-400 hover:text-indigo-200 transition-all duration-300 cursor-pointer">
+                    <i data-lucide="moon" class="w-4 h-4 text-indigo-400"></i>
+                    <span>Sonhos</span>
+                    <span id="count-dream" class="ml-1 text-xs px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300">0</span>
+                </button>
+
+                <button onclick="setTab('favorites')" id="tab-favorites" class="tab-btn flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-xl text-sm font-medium text-stone-400 hover:text-yellow-200 transition-all duration-300 cursor-pointer">
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400"></i>
+                    <span>Favoritos</span>
+                    <span id="count-favorites" class="ml-1 text-xs px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-300">0</span>
+                </button>
+            </div>
+
+            <!-- Frase Poética Dinâmica conforme a Aba -->
+            <p id="atmosphere-quote" class="font-serif italic text-lg sm:text-xl text-stone-400 mt-5 text-center max-w-2xl transition-opacity duration-500">
+                "Onde o que vivemos ao sol encontra o que imaginamos sob as estrelas."
+            </p>
+        </section>
+
+        <!-- Barra de Busca e Filtros Secundários -->
+        <section class="glass-panel rounded-2xl p-4 mb-8 flex flex-col md:flex-row gap-4 items-center justify-between">
+            <!-- Campo de Busca -->
+            <div class="relative w-full md:w-96">
+                <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    oninput="handleSearch(this.value)"
+                    placeholder="Buscar por título, relato ou #tag..." 
+                    class="w-full pl-10 pr-9 py-2.5 rounded-xl bg-black/30 border border-white/10 text-sm text-white placeholder-stone-500 focus:outline-none focus:border-white/30 transition-colors"
+                >
+                <button id="clear-search-btn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-white cursor-pointer">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- Filtro por Emoção/Clima -->
+            <div class="flex items-center gap-2 w-full md:w-auto overflow-x-auto pb-1 md:pb-0">
+                <span class="text-xs text-stone-400 whitespace-nowrap flex items-center gap-1.5 mr-1">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Clima:
+                </span>
+                <select id="emotion-filter" onchange="handleEmotionFilter(this.value)" class="px-3.5 py-2 rounded-xl bg-black/40 border border-white/10 text-sm text-stone-200 focus:outline-none focus:border-white/30 cursor-pointer">
+                    <option value="all">Todas as emoções</option>
+                    <option value="Nostalgia">🌅 Nostalgia</option>
+                    <option value="Alegria">☀️ Alegria</option>
+                    <option value="Paz">🍃 Paz</option>
+                    <option value="Mistério">🔮 Mistério</option>
+                    <option value="Lúcido">✨ Lúcido</option>
+                    <option value="Surreal">🌌 Surreal</option>
+                    <option value="Pesadelo">🌑 Pesadelo</option>
+                </select>
+
+                <!-- Botão discreto para limpar exemplos caso existam -->
+                <button id="btn-clear-examples" onclick="openConfirmClearModal()" class="hidden items-center gap-1.5 px-3 py-2 rounded-xl bg-white/5 hover:bg-red-500/20 border border-white/10 hover:border-red-500/30 text-xs text-stone-300 hover:text-red-200 transition-colors whitespace-nowrap cursor-pointer" title="Remover os registros de exemplo iniciais">
+                    <i data-lucide="eraser" class="w-3.5 h-3.5"></i>
+                    <span>Limpar Exemplos</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Estado de Carregamento -->
+        <div id="loading-state" class="py-20 flex flex-col items-center justify-center text-center">
+            <div class="w-12 h-12 rounded-full border-2 border-amber-400/30 border-t-amber-400 animate-spin mb-4"></div>
+            <p class="font-serif italic text-xl text-stone-300">Despertando suas lembranças...</p>
+        </div>
+
+        <!-- Galeria / Linha do Tempo em Cards -->
+        <section id="entries-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
+            <!-- Cards injetados via JavaScript -->
+        </section>
+
+        <!-- Estado Vazio -->
+        <div id="empty-state" class="hidden py-16 px-4 text-center glass-panel rounded-3xl max-w-lg mx-auto my-8">
+            <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="book-open" class="w-8 h-8 text-stone-400"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-white mb-2">Nenhuma página encontrada</h3>
+            <p id="empty-state-desc" class="text-sm text-stone-400 mb-6 leading-relaxed">
+                Ainda não há registros que correspondam à sua busca ou filtro atual. Que tal eternizar um momento ou sonho agora?
+            </p>
+            <div class="flex flex-wrap gap-3 justify-center">
+                <button onclick="resetFilters()" id="btn-reset-filters" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-sm text-white transition-colors cursor-pointer">
+                    Limpar Filtros
+                </button>
+                <button onclick="openFormModal()" class="px-5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-semibold text-sm transition-colors cursor-pointer">
+                    Escrever Registro
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="relative z-10 border-t border-white/10 py-6 mt-12 text-center text-xs text-stone-500">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p>Onírica & Nostalgia — Seu santuário pessoal de memórias e sonhos.</p>
+            <p id="user-session-badge" class="font-mono text-[11px] text-stone-600"></p>
+        </div>
+    </footer>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 1: FORMULÁRIO DE CRIAÇÃO / EDIÇÃO DE REGISTRO                   -->
+    <!-- ===================================================================== -->
+    <div id="form-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm overflow-y-auto">
+        <div class="relative w-full max-w-2xl rounded-3xl bg-[#13121a] border border-white/15 shadow-2xl overflow-hidden my-8 animate-fade-in">
+            <!-- Cabeçalho do Modal -->
+            <div id="form-modal-header" class="px-6 py-5 border-b border-white/10 flex items-center justify-between bg-gradient-to-r from-amber-500/10 to-transparent">
+                <div class="flex items-center gap-2.5">
+                    <i id="form-header-icon" data-lucide="feather" class="w-5 h-5 text-amber-400"></i>
+                    <h2 id="form-modal-title" class="font-serif text-2xl font-bold text-white">Novo Registro</h2>
+                </div>
+                <button onclick="closeFormModal()" class="p-2 rounded-xl text-stone-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Corpo do Formulário -->
+            <form id="entry-form" onsubmit="handleFormSubmit(event)" class="p-6 space-y-5">
+                <input type="hidden" id="entry-id">
+
+                <!-- Seletor de Tipo: Memória vs Sonho -->
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Natureza do Registro</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="entry-type" value="memory" class="peer sr-only" checked onchange="updateFormTheme('memory')">
+                            <div class="p-3.5 rounded-2xl border border-white/10 bg-white/5 peer-checked:bg-amber-500/15 peer-checked:border-amber-400/60 peer-checked:text-amber-200 text-stone-400 flex items-center justify-center gap-2.5 transition-all">
+                                <i data-lucide="sun" class="w-5 h-5 text-amber-400"></i>
+                                <span class="font-medium text-sm">Memória Vivida</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="entry-type" value="dream" class="peer sr-only" onchange="updateFormTheme('dream')">
+                            <div class="p-3.5 rounded-2xl border border-white/10 bg-white/5 peer-checked:bg-indigo-500/15 peer-checked:border-indigo-400/60 peer-checked:text-indigo-200 text-stone-400 flex items-center justify-center gap-2.5 transition-all">
+                                <i data-lucide="moon" class="w-5 h-5 text-indigo-400"></i>
+                                <span class="font-medium text-sm">Sonho Noturno</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Título e Favorito -->
+                <div class="flex gap-3 items-end">
+                    <div class="flex-grow">
+                        <label for="entry-title" class="block text-xs uppercase tracking-wider text-stone-400 mb-1.5">Título Poético *</label>
+                        <input 
+                            type="text" 
+                            id="entry-title" 
+                            required 
+                            placeholder="Ex: A tarde de chuva na casa da avó..."
+                            class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/10 text-white placeholder-stone-500 focus:outline-none focus:border-amber-400/50 transition-colors font-serif text-lg"
+                        >
+                    </div>
+                    <button type="button" id="form-fav-btn" onclick="toggleFormFavorite()" class="p-3.5 rounded-xl border border-white/10 bg-white/5 text-stone-400 hover:text-yellow-300 transition-all cursor-pointer" title="Marcar como Favorito">
+                        <i id="form-fav-icon" data-lucide="star" class="w-5 h-5"></i>
+                    </button>
+                </div>
+
+                <!-- Data e Emoção/Clima -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="entry-date" class="block text-xs uppercase tracking-wider text-stone-400 mb-1.5">Data *</label>
+                        <input 
+                            type="date" 
+                            id="entry-date" 
+                            required
+                            class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors text-sm [color-scheme:dark]"
+                        >
+                    </div>
+                    <div>
+                        <label for="entry-emotion" class="block text-xs uppercase tracking-wider text-stone-400 mb-1.5">Emoção / Clima *</label>
+                        <select 
+                            id="entry-emotion" 
+                            required
+                            class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-white/10 text-white focus:outline-none focus:border-white/30 transition-colors text-sm cursor-pointer"
+                        >
+                            <option value="Nostalgia">🌅 Nostalgia</option>
+                            <option value="Alegria">☀️ Alegria</option>
+                            <option value="Paz">🍃 Paz</option>
+                            <option value="Mistério">🔮 Mistério</option>
+                            <option value="Lúcido">✨ Lúcido</option>
+                            <option value="Surreal">🌌 Surreal</option>
+                            <option value="Pesadelo">🌑 Pesadelo</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Relato Detalhado -->
+                <div>
+                    <label for="entry-content" class="block text-xs uppercase tracking-wider text-stone-400 mb-1.5">Relato & Sensações *</label>
+                    <textarea 
+                        id="entry-content" 
+                        rows="5" 
+                        required
+                        placeholder="Descreva os detalhes, cores, sons, cheiros ou sentimentos que marcaram este momento..."
+                        class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/10 text-stone-200 placeholder-stone-500 focus:outline-none focus:border-white/30 transition-colors text-sm leading-relaxed resize-y"
+                    ></textarea>
+                </div>
+
+                <!-- Tags Personalizadas -->
+                <div>
+                    <label for="entry-tags" class="block text-xs uppercase tracking-wider text-stone-400 mb-1.5">Tags (separadas por vírgula)</label>
+                    <input 
+                        type="text" 
+                        id="entry-tags" 
+                        placeholder="infância, mar, viagem, voar, reencontro..."
+                        class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-white/10 text-sm text-stone-200 placeholder-stone-500 focus:outline-none focus:border-white/30 transition-colors"
+                    >
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="pt-3 border-t border-white/10 flex items-center justify-end gap-3">
+                    <button type="button" onclick="closeFormModal()" class="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-sm text-stone-300 transition-colors cursor-pointer">
+                        Cancelar
+                    </button>
+                    <button type="submit" id="btn-save-entry" class="px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-semibold text-sm shadow-lg transition-all cursor-pointer flex items-center gap-2">
+                        <i data-lucide="check" class="w-4 h-4"></i>
+                        <span>Guardar no Diário</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 2: LEITURA IMERSIVA                                             -->
+    <!-- ===================================================================== -->
+    <div id="read-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto">
+        <div id="read-modal-card" class="relative w-full max-w-2xl rounded-3xl bg-[#111018] border border-white/15 shadow-2xl overflow-hidden my-8 animate-fade-in">
+            <!-- Faixa Superior Decorativa -->
+            <div id="read-top-bar" class="h-2 w-full bg-gradient-to-r from-amber-400 to-amber-600"></div>
+
+            <div class="p-6 sm:p-10">
+                <!-- Metadados Superiores -->
+                <div class="flex items-center justify-between gap-4 mb-6">
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <span id="read-type-badge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                            <i data-lucide="sun" class="w-3.5 h-3.5"></i> Memória
+                        </span>
+                        <span id="read-emotion-badge" class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs bg-white/5 text-stone-300 border border-white/10">
+                            🌅 Nostalgia
+                        </span>
+                        <span id="read-date" class="text-xs text-stone-400 font-medium">
+                            21 de Novembro de 2026
+                        </span>
+                    </div>
+
+                    <div class="flex items-center gap-1">
+                        <button id="read-fav-btn" onclick="toggleReadFavorite()" class="p-2 rounded-xl hover:bg-white/10 text-stone-400 transition-colors cursor-pointer" title="Favoritar">
+                            <i data-lucide="star" class="w-5 h-5"></i>
+                        </button>
+                        <button onclick="closeReadModal()" class="p-2 rounded-xl hover:bg-white/10 text-stone-400 hover:text-white transition-colors cursor-pointer" title="Fechar">
+                            <i data-lucide="x" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Título Editorial -->
+                <h2 id="read-title" class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight mb-6">
+                    Título do Registro
+                </h2>
+
+                <!-- Corpo do Texto com Tipografia de Leitura Confortável -->
+                <div id="read-content" class="text-stone-300 text-base sm:text-lg leading-relaxed whitespace-pre-line font-light mb-8 border-l-2 border-white/10 pl-4 sm:pl-6">
+                    Conteúdo completo...
+                </div>
+
+                <!-- Tags -->
+                <div id="read-tags" class="flex flex-wrap gap-2 mb-8">
+                    <!-- Tags injetadas via JS -->
+                </div>
+
+                <!-- Rodapé de Ações do Modal de Leitura -->
+                <div class="pt-5 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+                    <button id="read-delete-btn" onclick="requestDeleteCurrent()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-300 border border-red-500/20 text-xs font-medium transition-colors cursor-pointer">
+                        <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        <span>Excluir Registro</span>
+                    </button>
+
+                    <div class="flex items-center gap-2.5">
+                        <button onclick="editCurrentEntry()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-sm font-medium transition-colors cursor-pointer">
+                            <i data-lucide="edit-3" class="w-4 h-4"></i>
+                            <span>Editar</span>
+                        </button>
+                        <button onclick="closeReadModal()" class="px-5 py-2.5 rounded-xl bg-white text-stone-950 hover:bg-stone-200 text-sm font-semibold transition-colors cursor-pointer">
+                            Concluir Leitura
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 3: CONFIRMAÇÃO PERSONALIZADA (SEM ALERT/CONFIRM NATIVOS)        -->
+    <!-- ===================================================================== -->
+    <div id="confirm-modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="w-full max-w-md rounded-3xl bg-[#16151f] border border-white/15 p-6 shadow-2xl animate-fade-in">
+            <div class="w-12 h-12 rounded-2xl bg-red-500/15 border border-red-500/30 flex items-center justify-center text-red-400 mb-4">
+                <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+            </div>
+            <h3 id="confirm-title" class="font-serif text-2xl font-bold text-white mb-2">Confirmar exclusão?</h3>
+            <p id="confirm-message" class="text-sm text-stone-400 leading-relaxed mb-6">
+                Esta ação não poderá ser desfeita e o registro será removido permanentemente do seu diário.
+            </p>
+            <div class="flex justify-end gap-3">
+                <button onclick="closeConfirmModal()" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-sm text-stone-300 transition-colors cursor-pointer">
+                    Cancelar
+                </button>
+                <button id="confirm-action-btn" class="px-5 py-2 rounded-xl bg-red-500 hover:bg-red-600 text-white font-medium text-sm transition-colors cursor-pointer">
+                    Sim, Excluir
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificação Toast Flutuante -->
+    <div id="toast" class="fixed bottom-6 right-6 z-[70] transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-[#1c1b26] border border-white/15 shadow-2xl text-sm text-white">
+            <i id="toast-icon" data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+            <span id="toast-message">Registro salvo com sucesso!</span>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- LÓGICA DA APLICAÇÃO & FIREBASE FIRESTORE                              -->
+    <!-- ===================================================================== -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, doc, addDoc, updateDoc, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Configuração do Ambiente Firebase
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'onirica-nostalgia-app';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+
+        let app = null;
+        let auth = null;
+        let db = null;
+        let currentUser = null;
+        let unsubscribeEntries = null;
+
+        // Estado da Aplicação
+        let entries = [];
+        let activeTab = 'all'; // 'all' | 'memory' | 'dream' | 'favorites'
+        let searchQuery = '';
+        let emotionFilter = 'all';
+        let formIsFavorite = false;
+        let currentReadId = null;
+        let isSeededThisSession = false;
+
+        // Mapeamento visual das emoções
+        const emotionConfig = {
+            'Nostalgia': { emoji: '🌅', color: 'text-amber-300 bg-amber-500/10 border-amber-500/20' },
+            'Alegria':   { emoji: '☀️', color: 'text-yellow-300 bg-yellow-500/10 border-yellow-500/20' },
+            'Paz':       { emoji: '🍃', color: 'text-emerald-300 bg-emerald-500/10 border-emerald-500/20' },
+            'Mistério':  { emoji: '🔮', color: 'text-purple-300 bg-purple-500/10 border-purple-500/20' },
+            'Lúcido':    { emoji: '✨', color: 'text-cyan-300 bg-cyan-500/10 border-cyan-500/20' },
+            'Surreal':   { emoji: '🌌', color: 'text-indigo-300 bg-indigo-500/10 border-indigo-500/20' },
+            'Pesadelo':  { emoji: '🌑', color: 'text-rose-300 bg-rose-500/10 border-rose-500/20' }
+        };
+
+        // Registros Poéticos de Exemplo (Injetados apenas se a conta estiver vazia)
+        const sampleEntries = [
+            {
+                type: 'memory',
+                title: 'O cheiro de café e terra molhada na varanda',
+                date: new Date(Date.now() - 86400000 * 3).toISOString().split('T')[0],
+                emotion: 'Nostalgia',
+                content: 'Era fim de tarde e uma chuva fina de verão tinha acabado de cair. O sol dourado rasgou as nuvens bem na hora em que o café fresco foi passado na cozinha. Lembro perfeitamente do som das gotas pingando das folhas da mangueira e da sensação de que o tempo havia parado por alguns minutos.',
+                tags: ['infância', 'chuva', 'café', 'fim de tarde'],
+                isFavorite: true,
+                isExample: true,
+                createdAt: Date.now() - 300000
+            },
+            {
+                type: 'dream',
+                title: 'A biblioteca flutuante acima das nuvens de violeta',
+                date: new Date(Date.now() - 86400000 * 1).toISOString().split('T')[0],
+                emotion: 'Lúcido',
+                content: 'Eu caminhava por escadarias de mármore branco que não tinham corrimão e levavam a estantes infinitas suspensas no céu noturno. Quando abri um livro encadernado em veludo azul, as palavras saltaram das páginas como vagalumes dourados e formaram mapas de lugares que eu ainda vou conhecer.',
+                tags: ['voar', 'livros', 'estrelas', 'sonho lúcido'],
+                isFavorite: true,
+                isExample: true,
+                createdAt: Date.now() - 200000
+            },
+            {
+                type: 'memory',
+                title: 'Primeira vez vendo o mar ao amanhecer',
+                date: new Date(Date.now() - 86400000 * 12).toISOString().split('T')[0],
+                emotion: 'Paz',
+                content: 'Chegamos à praia antes mesmo do horizonte clarear. A areia estava fria sob os pés e o som das ondas parecia respirar junto conosco. Quando o primeiro raio de sol tocou a água, tudo ganhou um brilho rosado inesquecível.',
+                tags: ['mar', 'amanhecer', 'viagem', 'silêncio'],
+                isFavorite: false,
+                isExample: true,
+                createdAt: Date.now() - 100000
+            },
+            {
+                type: 'dream',
+                title: 'O relógio de areia que corria para cima',
+                date: new Date().toISOString().split('T')[0],
+                emotion: 'Surreal',
+                content: 'Estava em uma estação de trem antiga feita inteiramente de vidro translúcido. No centro do saguão havia uma ampulheta gigante onde grãos de luz subiam em vez de cair. Cada vez que alguém sorria na plataforma, um trem silencioso partia rumo ao horizonte.',
+                tags: ['tempo', 'trem', 'vidro', 'surreal'],
+                isFavorite: false,
+                isExample: true,
+                createdAt: Date.now()
+            }
+        ];
+
+        // Inicialização do Firebase e Autenticação (Regra 3: Auth antes de Queries)
+        async function initApp() {
+            lucide.createIcons();
+            setDefaultDate();
+
+            if (!firebaseConfig) {
+                updateSyncStatus('error', 'Modo Offline (Local)');
+                entries = [...sampleEntries].map((item, idx) => ({ id: 'local-' + idx, ...item }));
+                finishLoading();
+                return;
+            }
+
+            try {
+                app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+
+                // Autenticar primeiro
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                onAuthStateChanged(auth, (user) => {
+                    if (!user) return;
+                    currentUser = user;
+                    updateSyncStatus('connected', 'Sincronizado na nuvem');
+                    const badge = document.getElementById('user-session-badge');
+                    if (badge) badge.textContent = `Cofre Pessoal: ${user.uid}`;
+                    subscribeToEntries(user.uid);
+                });
+            } catch (error) {
+                console.error("Erro ao inicializar Firebase:", error);
+                updateSyncStatus('error', 'Erro de conexão');
+                finishLoading();
+            }
+        }
+
+        // Escutar coleção privada do usuário no Firestore (Regras 1 e 2)
+        function subscribeToEntries(userId) {
+            if (!db || !userId) return;
+            if (unsubscribeEntries) unsubscribeEntries();
+
+            // Regra 1: Caminho estrito /artifacts/{appId}/users/{userId}/{collectionName}
+            const entriesCol = collection(db, 'artifacts', appId, 'users', userId, 'entries');
+
+            // Regra 2: Consulta simples sem orderBy/where complexos; ordenação feita em memória
+            unsubscribeEntries = onSnapshot(entriesCol, async (snapshot) => {
+                const fetched = [];
+                snapshot.forEach((docSnap) => {
+                    fetched.push({ id: docSnap.id, ...docSnap.data() });
+                });
+
+                // Se for a primeira visita e o diário estiver vazio, popula com exemplos poéticos
+                if (fetched.length === 0 && !isSeededThisSession) {
+                    isSeededThisSession = true;
+                    await seedInitialExamples(userId);
+                    return;
+                }
+
+                // Ordenar por data do evento (mais recente primeiro) e depois por data de criação
+                entries = fetched.sort((a, b) => {
+                    const dateDiff = (b.date || '').localeCompare(a.date || '');
+                    if (dateDiff !== 0) return dateDiff;
+                    return (b.createdAt || 0) - (a.createdAt || 0);
+                });
+
+                finishLoading();
+            }, (error) => {
+                console.error("Erro ao sincronizar registros:", error);
+                updateSyncStatus('error', 'Falha na sincronização');
+                finishLoading();
+            });
+        }
+
+        // Inserir exemplos iniciais no Firestore
+        async function seedInitialExamples(userId) {
+            if (!db || !userId) return;
+            const entriesCol = collection(db, 'artifacts', appId, 'users', userId, 'entries');
+            try {
+                for (const item of sampleEntries) {
+                    await addDoc(entriesCol, item);
+                }
+            } catch (e) {
+                console.error("Erro ao criar exemplos:", e);
+            }
+        }
+
+        function finishLoading() {
+            document.getElementById('loading-state').classList.add('hidden');
+            updateCounts();
+            updateClearExamplesVisibility();
+            renderEntries();
+        }
+
+        function updateSyncStatus(state, text) {
+            const dot = document.getElementById('sync-dot');
+            const label = document.getElementById('sync-text');
+            if (!dot || !label) return;
+            label.textContent = text;
+            if (state === 'connected') {
+                dot.className = 'w-2 h-2 rounded-full bg-emerald-400';
+            } else if (state === 'error') {
+                dot.className = 'w-2 h-2 rounded-full bg-rose-400';
+            } else {
+                dot.className = 'w-2 h-2 rounded-full bg-amber-400 animate-pulse';
+            }
+        }
+
+        // =====================================================================
+        // NAVEGAÇÃO ENTRE ABAS E ATMOSFERAS VISUAIS
+        // =====================================================================
+        window.setTab = function(tab) {
+            activeTab = tab;
+            const body = document.body;
+            const quote = document.getElementById('atmosphere-quote');
+            const orb1 = document.getElementById('orb-1');
+            const orb2 = document.getElementById('orb-2');
+            const newBtn = document.getElementById('btn-new-entry');
+
+            // Resetar estilos dos botões das abas
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-white/15', 'bg-amber-500/20', 'bg-indigo-500/20', 'bg-yellow-500/20', 'text-white', 'text-amber-200', 'text-indigo-200', 'text-yellow-200', 'shadow-sm');
+                btn.classList.add('text-stone-400');
+            });
+
+            const activeBtn = document.getElementById(`tab-${tab}`);
+            activeBtn.classList.remove('text-stone-400');
+
+            if (tab === 'memory') {
+                body.className = 'theme-memory text-stone-200 font-sans min-h-screen flex flex-col antialiased selection:bg-amber-500/30 selection:text-amber-200';
+                activeBtn.classList.add('bg-amber-500/20', 'text-amber-200', 'shadow-sm');
+                quote.textContent = '"Guardar uma memória é acender uma lanterna dourada contra o esquecimento do tempo."';
+                orb1.className = 'absolute -top-32 -left-32 w-[30rem] h-[30rem] rounded-full bg-amber-500/15 blur-3xl transition-all duration-1000 animate-pulse-slow';
+                orb2.className = 'absolute -bottom-32 -right-32 w-[26rem] h-[26rem] rounded-full bg-orange-600/10 blur-3xl transition-all duration-1000 animate-pulse-slow';
+                newBtn.className = 'flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-semibold text-sm shadow-lg shadow-amber-500/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer';
+            } else if (tab === 'dream') {
+                body.className = 'theme-dream text-stone-200 font-sans min-h-screen flex flex-col antialiased selection:bg-indigo-500/30 selection:text-indigo-200';
+                activeBtn.classList.add('bg-indigo-500/20', 'text-indigo-200', 'shadow-sm');
+                quote.textContent = '"Os sonhos são cartas secretas que a nossa alma escreve enquanto o mundo dorme."';
+                orb1.className = 'absolute -top-32 -left-32 w-[26rem] h-[26rem] rounded-full bg-purple-600/15 blur-3xl transition-all duration-1000 animate-pulse-slow';
+                orb2.className = 'absolute -bottom-32 -right-32 w-[32rem] h-[32rem] rounded-full bg-indigo-500/15 blur-3xl transition-all duration-1000 animate-pulse-slow';
+                newBtn.className = 'flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-400 hover:to-violet-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer';
+            } else if (tab === 'favorites') {
+                body.className = 'theme-all text-stone-200 font-sans min-h-screen flex flex-col antialiased selection:bg-amber-500/30 selection:text-amber-200';
+                activeBtn.classList.add('bg-yellow-500/20', 'text-yellow-200', 'shadow-sm');
+                quote.textContent = '"Constelações particulares: os instantes e visões que mais tocaram seu coração."';
+            } else {
+                body.className = 'theme-all text-stone-200 font-sans min-h-screen flex flex-col antialiased selection:bg-amber-500/30 selection:text-amber-200';
+                activeBtn.classList.add('bg-white/15', 'text-white', 'shadow-sm');
+                quote.textContent = '"Onde o que vivemos ao sol encontra o que imaginamos sob as estrelas."';
+                orb1.className = 'absolute -top-32 -left-32 w-96 h-96 rounded-full bg-amber-500/10 blur-3xl transition-all duration-1000 animate-pulse-slow';
+                orb2.className = 'absolute -bottom-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-indigo-500/10 blur-3xl transition-all duration-1000 animate-pulse-slow';
+                newBtn.className = 'flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-semibold text-sm shadow-lg shadow-amber-500/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer';
+            }
+
+            renderEntries();
+        };
+
+        // =====================================================================
+        // FILTRAGEM, BUSCA E RENDERIZAÇÃO DOS CARDS
+        // =====================================================================
+        window.handleSearch = function(val) {
+            searchQuery = val.trim().toLowerCase();
+            const clearBtn = document.getElementById('clear-search-btn');
+            if (searchQuery.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+            renderEntries();
+        };
+
+        window.clearSearch = function() {
+            document.getElementById('search-input').value = '';
+            handleSearch('');
+        };
+
+        window.handleEmotionFilter = function(val) {
+            emotionFilter = val;
+            renderEntries();
+        };
+
+        window.resetFilters = function() {
+            clearSearch();
+            document.getElementById('emotion-filter').value = 'all';
+            emotionFilter = 'all';
+            setTab('all');
+        };
+
+        function updateCounts() {
+            document.getElementById('count-all').textContent = entries.length;
+            document.getElementById('count-memory').textContent = entries.filter(e => e.type === 'memory').length;
+            document.getElementById('count-dream').textContent = entries.filter(e => e.type === 'dream').length;
+            document.getElementById('count-favorites').textContent = entries.filter(e => e.isFavorite).length;
+        }
+
+        function updateClearExamplesVisibility() {
+            const hasExamples = entries.some(e => e.isExample === true);
+            const btn = document.getElementById('btn-clear-examples');
+            if (hasExamples) {
+                btn.classList.remove('hidden');
+                btn.classList.add('inline-flex');
+            } else {
+                btn.classList.add('hidden');
+                btn.classList.remove('inline-flex');
+            }
+        }
+
+        function formatDateBR(dateStr) {
+            if (!dateStr) return '';
+            const [year, month, day] = dateStr.split('-');
+            const months = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+            return `${day} de ${months[parseInt(month, 10) - 1]}, ${year}`;
+        }
+
+        function renderEntries() {
+            const grid = document.getElementById('entries-grid');
+            const emptyState = document.getElementById('empty-state');
+
+            const filtered = entries.filter(entry => {
+                // Filtro por Aba
+                if (activeTab === 'memory' && entry.type !== 'memory') return false;
+                if (activeTab === 'dream' && entry.type !== 'dream') return false;
+                if (activeTab === 'favorites' && !entry.isFavorite) return false;
+
+                // Filtro por Emoção
+                if (emotionFilter !== 'all' && entry.emotion !== emotionFilter) return false;
+
+                // Filtro por Busca Textual
+                if (searchQuery) {
+                    const inTitle = (entry.title || '').toLowerCase().includes(searchQuery);
+                    const inContent = (entry.content || '').toLowerCase().includes(searchQuery);
+                    const inTags = (entry.tags || []).some(t => t.toLowerCase().includes(searchQuery.replace('#', '')));
+                    if (!inTitle && !inContent && !inTags) return false;
+                }
+
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                grid.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            grid.classList.remove('hidden');
+
+            grid.innerHTML = filtered.map(entry => {
+                const isMemory = entry.type === 'memory';
+                const emo = emotionConfig[entry.emotion] || { emoji: '✨', color: 'text-stone-300 bg-white/5 border-white/10' };
+
+                const cardBorder = isMemory 
+                    ? 'hover:border-amber-400/40 bg-gradient-to-b from-amber-500/[0.06] to-white/[0.02]' 
+                    : 'hover:border-indigo-400/40 bg-gradient-to-b from-indigo-500/[0.07] to-white/[0.02]';
+
+                const typeBadge = isMemory
+                    ? `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-amber-500/15 text-amber-300 border border-amber-500/25"><i data-lucide="sun" class="w-3 h-3"></i> Memória</span>`
+                    : `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-indigo-500/15 text-indigo-300 border border-indigo-500/25"><i data-lucide="moon" class="w-3 h-3"></i> Sonho</span>`;
+
+                const starClass = entry.isFavorite 
+                    ? 'text-yellow-400 fill-yellow-400' 
+                    : 'text-stone-500 hover:text-yellow-300';
+
+                const tagsHtml = (entry.tags && entry.tags.length > 0)
+                    ? `<div class="flex flex-wrap gap-1.5 mt-4 pt-3 border-t border-white/5">
+                        ${entry.tags.slice(0, 4).map(tag => `<span class="text-[11px] px-2 py-0.5 rounded-md bg-white/5 text-stone-400">#${escapeHtml(tag)}</span>`).join('')}
+                        ${entry.tags.length > 4 ? `<span class="text-[11px] px-1.5 py-0.5 text-stone-500">+${entry.tags.length - 4}</span>` : ''}
+                       </div>`
+                    : '';
+
+                return `
+                    <article onclick="openReadModal('${entry.id}')" class="group relative rounded-3xl border border-white/10 ${cardBorder} backdrop-blur-md p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl cursor-pointer animate-fade-in">
+                        <div>
+                            <!-- Topo do Card -->
+                            <div class="flex items-center justify-between gap-2 mb-4">
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    ${typeBadge}
+                                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] border ${emo.color}">
+                                        ${emo.emoji} ${escapeHtml(entry.emotion)}
+                                    </span>
+                                </div>
+                                <button onclick="event.stopPropagation(); toggleFavorite('${entry.id}')" class="p-1.5 rounded-lg hover:bg-white/10 transition-colors cursor-pointer" title="${entry.isFavorite ? 'Remover dos favoritos' : 'Favoritar'}">
+                                    <i data-lucide="star" class="w-4 h-4 ${starClass}"></i>
+                                </button>
+                            </div>
+
+                            <!-- Data -->
+                            <div class="text-xs text-stone-400 mb-1.5 flex items-center gap-1.5">
+                                <i data-lucide="calendar" class="w-3.5 h-3.5 opacity-70"></i>
+                                <span>${formatDateBR(entry.date)}</span>
+                                ${entry.isExample ? '<span class="ml-auto text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-white/5 text-stone-500">Exemplo</span>' : ''}
+                            </div>
+
+                            <!-- Título -->
+                            <h3 class="font-serif text-2xl font-bold text-white group-hover:text-amber-100 transition-colors leading-snug mb-3">
+                                ${escapeHtml(entry.title)}
+                            </h3>
+
+                            <!-- Prévia do Relato -->
+                            <p class="text-sm text-stone-300/90 leading-relaxed line-clamp-4 font-light">
+                                ${escapeHtml(entry.content)}
+                            </p>
+                        </div>
+
+                        ${tagsHtml}
+                    </article>
+                `;
+            }).join('');
+
+            lucide.createIcons();
+        }
+
+        // =====================================================================
+        // MODAL DE FORMULÁRIO (CRIAR / EDITAR)
+        // =====================================================================
+        function setDefaultDate() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('entry-date').value = today;
+        }
+
+        window.updateFormTheme = function(type) {
+            const header = document.getElementById('form-modal-header');
+            const icon = document.getElementById('form-header-icon');
+            const saveBtn = document.getElementById('btn-save-entry');
+
+            if (type === 'dream') {
+                header.className = 'px-6 py-5 border-b border-white/10 flex items-center justify-between bg-gradient-to-r from-indigo-500/15 to-transparent';
+                icon.className = 'w-5 h-5 text-indigo-400';
+                saveBtn.className = 'px-6 py-2.5 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white font-semibold text-sm shadow-lg transition-all cursor-pointer flex items-center gap-2';
+            } else {
+                header.className = 'px-6 py-5 border-b border-white/10 flex items-center justify-between bg-gradient-to-r from-amber-500/15 to-transparent';
+                icon.className = 'w-5 h-5 text-amber-400';
+                saveBtn.className = 'px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-semibold text-sm shadow-lg transition-all cursor-pointer flex items-center gap-2';
+            }
+        };
+
+        window.toggleFormFavorite = function() {
+            formIsFavorite = !formIsFavorite;
+            updateFormFavUI();
+        };
+
+        function updateFormFavUI() {
+            const btn = document.getElementById('form-fav-btn');
+            const icon = document.getElementById('form-fav-icon');
+            if (formIsFavorite) {
+                btn.classList.add('border-yellow-400/50', 'bg-yellow-500/15', 'text-yellow-300');
+                btn.classList.remove('border-white/10', 'bg-white/5', 'text-stone-400');
+                icon.classList.add('fill-yellow-400');
+            } else {
+                btn.classList.remove('border-yellow-400/50', 'bg-yellow-500/15', 'text-yellow-300');
+                btn.classList.add('border-white/10', 'bg-white/5', 'text-stone-400');
+                icon.classList.remove('fill-yellow-400');
+            }
+        }
+
+        window.openFormModal = function(entryToEdit = null) {
+            const modal = document.getElementById('form-modal');
+            const titleEl = document.getElementById('form-modal-title');
+            const form = document.getElementById('entry-form');
+
+            form.reset();
+
+            if (entryToEdit) {
+                titleEl.textContent = 'Editar Registro';
+                document.getElementById('entry-id').value = entryToEdit.id;
+                const radio = document.querySelector(`input[name="entry-type"][value="${entryToEdit.type}"]`);
+                if (radio) radio.checked = true;
+                updateFormTheme(entryToEdit.type);
+
+                document.getElementById('entry-title').value = entryToEdit.title;
+                document.getElementById('entry-date').value = entryToEdit.date;
+                document.getElementById('entry-emotion').value = entryToEdit.emotion;
+                document.getElementById('entry-content').value = entryToEdit.content;
+                document.getElementById('entry-tags').value = (entryToEdit.tags || []).join(', ');
+                formIsFavorite = !!entryToEdit.isFavorite;
+            } else {
+                titleEl.textContent = 'Novo Registro';
+                document.getElementById('entry-id').value = '';
+                const defaultType = activeTab === 'dream' ? 'dream' : 'memory';
+                const radio = document.querySelector(`input[name="entry-type"][value="${defaultType}"]`);
+                if (radio) radio.checked = true;
+                updateFormTheme(defaultType);
+                setDefaultDate();
+                formIsFavorite = false;
+            }
+
+            updateFormFavUI();
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            lucide.createIcons();
+        };
+
+        window.closeFormModal = function() {
+            const modal = document.getElementById('form-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        };
+
+        window.handleFormSubmit = async function(e) {
+            e.preventDefault();
+
+            const id = document.getElementById('entry-id').value;
+            const type = document.querySelector('input[name="entry-type"]:checked').value;
+            const title = document.getElementById('entry-title').value.trim();
+            const date = document.getElementById('entry-date').value;
+            const emotion = document.getElementById('entry-emotion').value;
+            const content = document.getElementById('entry-content').value.trim();
+            const rawTags = document.getElementById('entry-tags').value;
+
+            const tags = rawTags
+                .split(',')
+                .map(t => t.trim().replace(/^#/, ''))
+                .filter(t => t.length > 0);
+
+            const payload = {
+                type,
+                title,
+                date,
+                emotion,
+                content,
+                tags,
+                isFavorite: formIsFavorite,
+                isExample: false,
+                updatedAt: Date.now()
+            };
+
+            closeFormModal();
+
+            if (db && currentUser) {
+                try {
+                    if (id) {
+                        const docRef = doc(db, 'artifacts', appId, 'users', currentUser.uid, 'entries', id);
+                        await updateDoc(docRef, payload);
+                        showToast('Registro atualizado com sucesso!');
+                    } else {
+                        payload.createdAt = Date.now();
+                        const colRef = collection(db, 'artifacts', appId, 'users', currentUser.uid, 'entries');
+                        await addDoc(colRef, payload);
+                        showToast(type === 'dream' ? 'Sonho eternizado no diário!' : 'Memória guardada com carinho!');
+                    }
+                } catch (err) {
+                    console.error("Erro ao salvar no Firestore:", err);
+                    showToast('Erro ao salvar na nuvem. Tente novamente.', true);
+                }
+            } else {
+                // Fallback em memória se sem config Firebase
+                if (id) {
+                    const idx = entries.findIndex(item => item.id === id);
+                    if (idx !== -1) entries[idx] = { ...entries[idx], ...payload };
+                } else {
+                    entries.unshift({ id: 'local-' + Date.now(), createdAt: Date.now(), ...payload });
+                }
+                finishLoading();
+                showToast('Registro salvo localmente!');
+            }
+        };
+
+        // =====================================================================
+        // MODAL DE LEITURA IMERSIVA
+        // =====================================================================
+        window.openReadModal = function(id) {
+            const entry = entries.find(e => e.id === id);
+            if (!entry) return;
+
+            currentReadId = id;
+            const isMemory = entry.type === 'memory';
+            const emo = emotionConfig[entry.emotion] || { emoji: '✨', color: 'text-stone-300 bg-white/5 border-white/10' };
+
+            const topBar = document.getElementById('read-top-bar');
+            topBar.className = isMemory 
+                ? 'h-2 w-full bg-gradient-to-r from-amber-400 via-orange-400 to-amber-600'
+                : 'h-2 w-full bg-gradient-to-r from-indigo-400 via-purple-400 to-violet-600';
+
+            const typeBadge = document.getElementById('read-type-badge');
+            if (isMemory) {
+                typeBadge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-amber-500/15 text-amber-300 border border-amber-500/30';
+                typeBadge.innerHTML = `<i data-lucide="sun" class="w-3.5 h-3.5"></i> Memória`;
+            } else {
+                typeBadge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-indigo-500/15 text-indigo-300 border border-indigo-500/30';
+                typeBadge.innerHTML = `<i data-lucide="moon" class="w-3.5 h-3.5"></i> Sonho`;
+            }
+
+            const emoBadge = document.getElementById('read-emotion-badge');
+            emoBadge.className = `inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs border ${emo.color}`;
+            emoBadge.textContent = `${emo.emoji} ${entry.emotion}`;
+
+            document.getElementById('read-date').textContent = formatDateBR(entry.date);
+            document.getElementById('read-title').textContent = entry.title;
+            document.getElementById('read-content').textContent = entry.content;
+
+            updateReadFavIcon(entry.isFavorite);
+
+            const tagsContainer = document.getElementById('read-tags');
+            if (entry.tags && entry.tags.length > 0) {
+                tagsContainer.innerHTML = entry.tags.map(t => 
+                    `<span class="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-stone-300">#${escapeHtml(t)}</span>`
+                ).join('');
+            } else {
+                tagsContainer.innerHTML = '';
+            }
+
+            const modal = document.getElementById('read-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            lucide.createIcons();
+        };
+
+        window.closeReadModal = function() {
+            const modal = document.getElementById('read-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            currentReadId = null;
+        };
+
+        function updateReadFavIcon(isFav) {
+            const btn = document.getElementById('read-fav-btn');
+            btn.innerHTML = `<i data-lucide="star" class="w-5 h-5 ${isFav ? 'text-yellow-400 fill-yellow-400' : 'text-stone-400'}"></i>`;
+            lucide.createIcons();
+        }
+
+        window.toggleReadFavorite = async function() {
+            if (!currentReadId) return;
+            await toggleFavorite(currentReadId);
+            const updated = entries.find(e => e.id === currentReadId);
+            if (updated) updateReadFavIcon(updated.isFavorite);
+        };
+
+        window.editCurrentEntry = function() {
+            if (!currentReadId) return;
+            const entry = entries.find(e => e.id === currentReadId);
+            closeReadModal();
+            if (entry) openFormModal(entry);
+        };
+
+        // =====================================================================
+        // FAVORITAR, EXCLUIR E LIMPAR EXEMPLOS
+        // =====================================================================
+        window.toggleFavorite = async function(id) {
+            const entry = entries.find(e => e.id === id);
+            if (!entry) return;
+            const newStatus = !entry.isFavorite;
+
+            if (db && currentUser) {
+                try {
+                    const docRef = doc(db, 'artifacts', appId, 'users', currentUser.uid, 'entries', id);
+                    await updateDoc(docRef, { isFavorite: newStatus });
+                } catch (err) {
+                    console.error("Erro ao favoritar:", err);
+                }
+            } else {
+                entry.isFavorite = newStatus;
+                finishLoading();
+            }
+        };
+
+        window.requestDeleteCurrent = function() {
+            if (!currentReadId) return;
+            const idToDelete = currentReadId;
+            openConfirmModal(
+                'Excluir este registro?',
+                'Esta memória ou sonho será apagado permanentemente do seu diário.',
+                async () => {
+                    closeReadModal();
+                    if (db && currentUser) {
+                        try {
+                            await deleteDoc(doc(db, 'artifacts', appId, 'users', currentUser.uid, 'entries', idToDelete));
+                            showToast('Registro excluído.');
+                        } catch (err) {
+                            console.error("Erro ao excluir:", err);
+                            showToast('Não foi possível excluir.', true);
+                        }
+                    } else {
+                        entries = entries.filter(e => e.id !== idToDelete);
+                        finishLoading();
+                        showToast('Registro excluído.');
+                    }
+                }
+            );
+        };
+
+        window.openConfirmClearModal = function() {
+            openConfirmModal(
+                'Limpar exemplos iniciais?',
+                'Todos os registros marcados como "Exemplo" serão removidos, mantendo intactos os que você escreveu.',
+                async () => {
+                    const exampleItems = entries.filter(e => e.isExample === true);
+                    if (db && currentUser) {
+                        try {
+                            for (const item of exampleItems) {
+                                await deleteDoc(doc(db, 'artifacts', appId, 'users', currentUser.uid, 'entries', item.id));
+                            }
+                            showToast('Exemplos removidos com sucesso!');
+                        } catch (err) {
+                            console.error("Erro ao limpar exemplos:", err);
+                        }
+                    } else {
+                        entries = entries.filter(e => !e.isExample);
+                        finishLoading();
+                        showToast('Exemplos removidos!');
+                    }
+                }
+            );
+        };
+
+        function openConfirmModal(title, message, onConfirm) {
+            document.getElementById('confirm-title').textContent = title;
+            document.getElementById('confirm-message').textContent = message;
+            const actionBtn = document.getElementById('confirm-action-btn');
+            
+            actionBtn.onclick = async () => {
+                closeConfirmModal();
+                await onConfirm();
+            };
+
+            const modal = document.getElementById('confirm-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        window.closeConfirmModal = function() {
+            const modal = document.getElementById('confirm-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        };
+
+        // =====================================================================
+        // UTILITÁRIOS (TOAST, ESCAPE HTML, TECLA ESC)
+        // =====================================================================
+        let toastTimeout = null;
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast');
+            const msgEl = document.getElementById('toast-message');
+            const iconEl = document.getElementById('toast-icon');
+
+            msgEl.textContent = message;
+            iconEl.setAttribute('data-lucide', isError ? 'alert-circle' : 'check-circle');
+            iconEl.className = isError ? 'w-4 h-4 text-rose-400' : 'w-4 h-4 text-emerald-400';
+            lucide.createIcons();
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            if (toastTimeout) clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3200);
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        // Fechar modais com a tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeFormModal();
+                closeReadModal();
+                closeConfirmModal();
+            }
+        });
+
+        // Iniciar aplicação ao carregar a janela
+        window.addEventListener('DOMContentLoaded', initApp);
+    </script>
+</body>
+</html>
